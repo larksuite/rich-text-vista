@@ -1,0 +1,12 @@
+{
+  "name": "@im/rich_text_text",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "Index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@lark/commonmark": "file:../../commonmark",
+    "@im/rich_text_base": "file:../../rich_text_core/rich_text_base",
+  }
+}

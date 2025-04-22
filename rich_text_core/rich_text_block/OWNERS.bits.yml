@@ -1,0 +1,9 @@
+code_review_config:
+  maintainers:
+  - jinshengzhe.uvpg
+code_review_rule:
+  files:
+  - pattern: .*
+    required_approvals: 1
+    reviewers:
+    - jinshengzhe.uvpg

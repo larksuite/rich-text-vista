@@ -1,0 +1,6 @@
+export { Node, Range, Position } from './src/main/ets/Node'
+export { TextNode } from './src/main/ets/TextNode'
+export { ImageNode } from './src/main/ets/commonmark/inline/node/ImageNode'
+export { LinkNode } from './src/main/ets/commonmark/inline/node/LinkNode'
+export { ParagraphNode } from './src/main/ets/commonmark/block/node/ParagraphNode'
+export { NodeWalker } from './src/main/ets/NodeWalker'
