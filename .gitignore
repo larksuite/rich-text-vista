@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+oh_modules/
+
+# Local configuration
+local.properties
+.idea/
+
+# Build artifacts and caches
+**/build/
+.hvigor/
+.cxx/
+**/.test/
+.appanalyzer/
+
+# Tooling configuration (Consider if you want to track these)
+.clangd/
+# .clang-format
+# .clang-tidy
+
+# OS generated files
+.DS_Store
+
