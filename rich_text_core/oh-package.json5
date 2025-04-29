@@ -6,9 +6,6 @@
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
-    "@im/rich_text_anchor": "file:../rich_text_core/rich_text_anchor",
-    "@im/rich_text_text": "file:../rich_text_core/rich_text_text",
-    "@im/rich_text_base": "file:../rich_text_core/rich_text_base",
-    "@im/rich_text_component": "file:../rich_text_core/rich_text_component"
+    "commonmark": "file:../commonmark",
   }
 }

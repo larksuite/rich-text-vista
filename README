@@ -1,0 +1,103 @@
+# RichTextVista
+
+RichTextVista is a high-performance, extensible rich text component designed for HarmonyOS applications, supporting diverse rich text styling capabilities. Named for its ability to render content with panoramic clarity, RichTextVista ensures every detail of the text shines in harmony (HarmonyOS).
+
+## Features
+
+### Core Text Formatting
+- &zwnj;**Basic styles**&zwnj;: Supports basic text styles including bold, italic, underline, and strikethrough formatting with paragraph separation capabilities.
+- &zwnj;**Advanced styles**&zwnj;: Enables inline code blocks, custom text/background color customization, and precise control over line/character spacing.
+
+### Layout Capabilities
+- Provides structured content presentation through ordered/unordered lists, hyperlink embedding, and image-text hybrid layouts.
+- Supports embedding user-defined components for time-sensitive content display.
+- Allows integration of RichTextVista within third-party elements.
+
+### Performance & Adaptation
+- Delivers high rendering performance in lists through optimized pipelines.
+- Supports foldable screens and PC devices.
+- Maintains UI component reuse efficiency.
+
+### Extensibility
+- Complies with CommonMark standards.
+
+## Usage
+
+RichTextVista offers multiple input formats (raw string, HTML, AST) for seamless integration across flexible scenarios:
+
+### Start with String Input
+```typescript
+// Assuming ComponentV1
+@Prop content: string
+
+RichTextVista({
+  ast: string2AST(this.string2AST(this.content)),
+  fontSize: 14,
+  lineHeight: 1.2,
+})
+```
+
+### Start with HTML Input
+```typescript
+// HTML Input Example
+@Param content: string
+
+RichTextVista({
+  ast: html2AST(this.html2AST(this.content)),
+  fontSize: 16,
+  fontColor: Color.Blue,
+})
+```
+
+### Start with AST Input
+```typescript
+// AST Input Example
+@Param content: Node
+
+RichTextVista({
+  ast: this.content,
+  fontSize: 14,
+  lineHeight: 1.2,
+  copyOption: CopyOptions.InApp,
+})
+```
+
+## Future Plans
+
+### Format Enhancement & Layout Capabilities
+- Add support for:
+  - Video embedding
+  - Table layouts
+  - Code block syntax highlighting
+- Strengthen mixed-format composition capabilities
+
+### Modular Styling Extensions
+- Introduce official extension packages with:
+  - Pre-built style templates
+  - Granular font/color customization via plugin architecture
+
+### Sustained Performance Improvements
+- Optimize parsing-rendering pipelines for:
+  - Complex nested elements
+  - Memory-efficient operations
+- Achieve high frame rate rendering in scroll-intensive scenarios
+
+### Rich Text Editor Development
+- Core features:
+  - Basic formatting support
+  - Image insertion capabilities
+  - Paragraph/list creation tools
+- Enhanced interaction:
+  - Keyboard shortcuts
+  - Smooth input handling
+- Native platform API integration
+
+## License
+MIT License. See [LICENSE](LICENSE) for details.
+
+## Acknowledgments
+- &zwnj;**HarmonyOS Team**&zwnj; - Collaboration on system API limitations
+- &zwnj;**Open Source Community**&zwnj; - Inspiration from CommonMark/Prosemirror
+- &zwnj;**Lark App IM Team**&zwnj; - Development guidance and suggestions
+
+
