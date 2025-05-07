@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { IImageStyledStringProducer } from './IImageStyledStringProducer'
-import { ImageNode } from '@lark/commonmark'
+import { ImageNode } from 'commonmark'
 import { assembleImage } from '../../string/image/ImageStyledString'
 import { ImageNodeExtend } from '../../extend/image/ImageNodeExtend'
 import { BaseProducer } from '../../../base/plugin/ParsePlugin'

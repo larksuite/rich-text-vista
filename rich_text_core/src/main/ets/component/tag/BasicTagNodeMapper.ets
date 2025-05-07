@@ -1,7 +1,7 @@
 // Copyright (c) 2024 Bytedance Ltd. and/or its affiliates
 // SPDX-License-Identifier: MIT
 
-import { ImageNode, Node, ParagraphNode, TextNode } from '@lark/commonmark'
+import { ImageNode, Node, ParagraphNode, TextNode } from 'commonmark'
 import { BasicRichTextElementTag } from './BasicRichTextElementTag'
 import { AnchorNode } from '../../anchor/node/AnchorNode'
 import { FigureNode } from '../../block/node/FigureNode'

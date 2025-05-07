@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { IAnchorProperty } from '../property/IAnchorProperty';
-import { Node, Range } from '@lark/commonmark';
+import { Node, Range } from 'commonmark';
 
 export class AnchorNode extends Node {
   public anchor: IAnchorProperty

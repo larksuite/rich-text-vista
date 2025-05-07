@@ -3,7 +3,7 @@
 
 import { TextNodeExtend } from "../extend/text/TextNodeExtend"
 import { VisitTextListener } from "./VisitTextListener"
-import { NodeWalker } from "@lark/commonmark"
+import { NodeWalker } from "commonmark"
 import { StyledTextNode } from "../node/StyledTextNode"
 import { BaseVisitHandler } from "../../base/plugin/ParsePlugin"
 import { RichTextExtendScope } from "../../base/scope/RichTextExtendScope"

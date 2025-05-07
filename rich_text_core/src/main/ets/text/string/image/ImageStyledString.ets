@@ -3,7 +3,7 @@
 
 import { taskpool } from '@kit.ArkTS'
 import { image } from '@kit.ImageKit'
-import { ImageNode } from '@lark/commonmark'
+import { ImageNode } from 'commonmark'
 
 export async function assembleImage(
   parseContext: ImageNode,

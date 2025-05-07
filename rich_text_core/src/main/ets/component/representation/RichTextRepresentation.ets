@@ -1,7 +1,7 @@
 // Copyright (c) 2024 Bytedance Ltd. and/or its affiliates
 // SPDX-License-Identifier: MIT
 
-import { Node, TextNode } from '@lark/commonmark'
+import { Node, TextNode } from 'commonmark'
 import { parseHTMLAsAST } from './html/HTML2AST'
 import { IRichTextRepresentation } from '../../base/representation/IRichTextRepresentation'
 

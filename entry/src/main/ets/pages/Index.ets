@@ -1,7 +1,5 @@
 import { RichTextComponent } from 'rich_text_core';
-import {
-  RichTextRepresentation
-} from 'rich_text_core/rich_text_component/src/main/ets/representation/RichTextRepresentation';
+import { RichTextRepresentation } from 'rich_text_core/src/main/ets/component/representation/RichTextRepresentation';
 
 @Entry
 @ComponentV2
@@ -13,7 +11,6 @@ struct Index {
       RichTextComponent({
         richText: this.generateRichTextRepresentation(),
         fontSize: 16,
-        fontColor: Color.Blue,
       })
     }
     .height('100%')

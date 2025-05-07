@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { BasicTagNodeMapper } from '../tag/BasicTagNodeMapper'
-import { ImageNode, Node } from '@lark/commonmark'
+import { ImageNode, Node } from 'commonmark'
 import { BasicRichTextElementTag } from '../tag/BasicRichTextElementTag'
 import { MarkdownPlugin } from '../../base/plugin/ParsePlugin'
 import { AnchorNode } from '../../anchor/node/AnchorNode'

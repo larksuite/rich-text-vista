@@ -1,7 +1,7 @@
 // Copyright (c) 2024 Bytedance Ltd. and/or its affiliates
 // SPDX-License-Identifier: MIT
 
-import { Node } from '@lark/commonmark'
+import { Node } from 'commonmark'
 import { ConfigurationConstant } from '@kit.AbilityKit'
 import { assembleInlineElementsToMutableStyledString } from './assemble/AssembleBasicMutableStyledString'
 import { BasicCollectMarkdownPlugin } from './plugin/BasicCollectMarkdownPlugin'

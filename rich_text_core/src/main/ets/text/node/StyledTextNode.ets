@@ -1,7 +1,7 @@
 // Copyright (c) 2024 Bytedance Ltd. and/or its affiliates
 // SPDX-License-Identifier: MIT
 
-import { Range, TextNode } from "@lark/commonmark"
+import { Range, TextNode } from "commonmark"
 import { ITextProperty } from "../property/ITextProperty"
 import { TextProperty } from "../property/TextProperty"
 

@@ -5,7 +5,7 @@ import { AnchorNode } from "../node/AnchorNode";
 import { NodeVisitHandler } from "../../base/visit/NodeVisitHandler";
 import { BaseVisitHandler } from "../../base/plugin/ParsePlugin";
 import { RichTextExtendScope } from "../../base/scope/RichTextExtendScope";
-import { NodeWalker } from "@lark/commonmark";
+import { NodeWalker } from "commonmark";
 import { AnchorNodeExtend } from "../extend/AnchorNodeExtend";
 import { VisitAnchorListener } from "./VisitAnchorListener";
 

@@ -1,7 +1,7 @@
 // Copyright (c) 2024 Bytedance Ltd. and/or its affiliates
 // SPDX-License-Identifier: MIT
 
-import { Node, Range } from "@lark/commonmark"
+import { Node, Range } from "commonmark"
 import { IOLProperty } from "../property/ol/IOLProperty"
 
 export class OrderedListNode extends Node {

@@ -1,7 +1,7 @@
 // Copyright (c) 2024 Bytedance Ltd. and/or its affiliates
 // SPDX-License-Identifier: MIT
 
-import { Node } from '@lark/commonmark';
+import { Node } from 'commonmark';
 
 export interface ITextStyledStringProducer<T extends Node> {
   produceStyledString(
