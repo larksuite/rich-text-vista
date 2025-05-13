@@ -7,6 +7,8 @@ import { AnchorStyledStringProducer } from "../../anchor/produce/AnchorStyledStr
 import { MarkdownPlugin, markdownPlugin } from '../../base/plugin/ParsePlugin'
 import { TextNodeVisitHandler } from "../../text/visit/TextNodeVisitHandler"
 import { TextStyledStringProducer } from "../../text/produce/text/TextStyledStringProducer"
+import { ImageStyledStringProducer } from "../../image/produce/ImageStyledStringProducer"
+import { ImageNodeVisitHandler } from "../../image/visit/ImageNodeVisitHandler"
 
 
 export class BasicCollectMarkdownPlugin {
@@ -42,6 +44,15 @@ function collectMarkdownPlugin(): Map<number, MarkdownPlugin> {
   )
   pluginMap.set(BasicRichTextElementTag.TEXT, text)
 
+  const image = markdownPlugin(
+    (visit) => {
+      visit.use(new ImageNodeVisitHandler())
+    },
+    (producer) => {
+      producer.use(new ImageStyledStringProducer());
+    }
+  )
+  pluginMap.set(BasicRichTextElementTag.IMG, image)
 
   return pluginMap
 }

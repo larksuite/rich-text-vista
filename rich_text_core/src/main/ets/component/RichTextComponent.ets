@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 import { Node } from 'commonmark'
-import { ConfigurationConstant } from '@kit.AbilityKit'
+import { common, ConfigurationConstant, Want } from '@kit.AbilityKit'
 import { assembleInlineElementsToMutableStyledString } from './assemble/AssembleBasicMutableStyledString'
 import { BasicCollectMarkdownPlugin } from './plugin/BasicCollectMarkdownPlugin'
 import { RichTextRepresentation } from './representation/RichTextRepresentation'
@@ -13,6 +13,8 @@ import { MarkdownPlugin } from '../base/plugin/ParsePlugin'
 import { AnchorNode } from '../anchor/node/AnchorNode'
 import { OrderedListNode } from '../block/node/OrderedListNode'
 import { assembleText } from '../text/string/text/TextStyledString'
+import { IExtensionRichText } from '../extension/IExtensionRichText'
+import { BusinessError } from '@kit.BasicServicesKit'
 
 const TAG = 'RichTextComponent'
 
@@ -44,7 +46,17 @@ export struct RichTextComponent {
   node?: Node
   controller: TextController = new TextController()
   pluginCache = new Map<number, MarkdownPlugin>()
-  @Once @Param onAnchorClick: (url?: string) => void = () => {
+  @Param extensionList: Array<IExtensionRichText<Node>> = []
+  @Once @Param onAnchorClick: (linkUrl?: string) => void = (linkUrl?: string) => {
+    let wantInfo: Want = {
+      action: 'ohos.want.action.viewData',
+      entities: ['entity.system.browsable'],
+      uri: linkUrl
+    }
+    let context = getContext(this) as common.UIAbilityContext;
+    context.startAbility(wantInfo).then(() => {
+    }).catch((err: BusinessError) => {
+    })
   }
   @Param isReused: boolean = false
   isFirstAttach = true
@@ -169,7 +181,7 @@ export struct RichTextComponent {
 
   async assembleStyledString(node: Node, baseString: MutableStyledString) {
     await assembleInlineElementsToMutableStyledString(baseString, this.pluginCache, node, this.fontSize,
-      this.getUniqueId(), this.onAnchorClick)
+      this.getUniqueId(), this.onAnchorClick, this.extensionList)
   }
 
   getTagFromNode(node: Node): BasicRichTextElementTag {

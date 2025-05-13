@@ -3,21 +3,24 @@
 
 import { taskpool } from '@kit.ArkTS'
 import { image } from '@kit.ImageKit'
-import { ImageNode } from 'commonmark'
+import { StyledImageNode } from '../node/StyledImageNode'
 
 export async function assembleImage(
-  parseContext: ImageNode,
+  parseContext: StyledImageNode,
   width: number | undefined,
   height: number | undefined,
   baseString: MutableStyledString,
 ) {
-  const pixelMap = await getPixelMapFromPath(parseContext.destination)
 
-  const imageString: MutableStyledString = new MutableStyledString(new ImageAttachment({
-    value: pixelMap,
-    size: (width && height) ? { width: width, height: height } : undefined,
+  const options: ResourceImageAttachmentOptions = {
+    resourceValue: parseContext.resStr,
     objectFit: ImageFit.Contain,
-  }))
+    size: {
+      width: parseContext.width,
+      height: parseContext.height
+    }
+  }
+  const imageString: MutableStyledString = new MutableStyledString(new ImageAttachment(options))
 
   baseString.appendStyledString(imageString)
 }

@@ -15,7 +15,7 @@ export class AnchorStyledStringProducer extends BaseProducer implements IAnchorS
     fontColor: ResourceColor | undefined,
     uniqueId: number | undefined,
     openAnchor: () => void,
-    onAnchorClick: () => void
+    onAnchorClick: (linkUrl?:string) => void
   ): MutableStyledString {
     const anchorStyledString = new MutableStyledString("")
     assembleAnchor(parseContext.anchor, anchorStyledString, fontSize, fontColor, uniqueId, openAnchor, onAnchorClick)

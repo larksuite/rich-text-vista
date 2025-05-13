@@ -13,6 +13,8 @@ export class RichTextRepresentation implements IRichTextRepresentation {
    * Option: The plain text content.
    */
   plainText?: string
+
+  ast?: Node
   /**
    * Option: The HTML content represented as a string.
    */
@@ -30,6 +32,8 @@ export class RichTextRepresentation implements IRichTextRepresentation {
     switch (true) {
       case!!this.plainText:
         return new TextNode(this.plainText ?? "")
+      case!!this.ast:
+        return this.ast ?? new Node()
       case!!this.htmlString:
         return parseHTMLAsAST(this.htmlString ?? "")
       default:

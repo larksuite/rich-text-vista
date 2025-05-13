@@ -39,7 +39,7 @@ export class BasicTagNodeMapper {
     } else if (node instanceof QuoteNode) {
       return BasicRichTextElementTag.QUOTE
     } else {
-      return BasicRichTextElementTag.UNKNOWN
+      return BasicRichTextElementTag.CUSTOM
     }
   }
 }

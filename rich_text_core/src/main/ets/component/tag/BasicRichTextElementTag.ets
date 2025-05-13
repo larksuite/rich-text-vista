@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: MIT
 
 export enum BasicRichTextElementTag {
-  UNKNOWN = 0,
+  CUSTOM = 0,
   TEXT = 1,
   IMG = 2,
   P = 3,

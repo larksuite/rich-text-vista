@@ -3,14 +3,15 @@
 
 import { IImageStyledStringProducer } from './IImageStyledStringProducer'
 import { ImageNode } from 'commonmark'
-import { assembleImage } from '../../string/image/ImageStyledString'
-import { ImageNodeExtend } from '../../extend/image/ImageNodeExtend'
-import { BaseProducer } from '../../../base/plugin/ParsePlugin'
-import { RichTextExtendScope } from '../../../base/scope/RichTextExtendScope'
+import { assembleImage } from '../assemble/ImageStyledString'
+import { ImageNodeExtend } from '../extend/ImageNodeExtend'
+import { BaseProducer } from '../../base/plugin/ParsePlugin'
+import { RichTextExtendScope } from '../../base/scope/RichTextExtendScope'
+import { StyledImageNode } from '../node/StyledImageNode'
 
 export class ImageStyledStringProducer extends BaseProducer implements IImageStyledStringProducer<ImageNode>, RichTextExtendScope<ImageNodeExtend> {
   produceStyledString(
-    parseContext: ImageNode,
+    parseContext: StyledImageNode,
     width?: number | undefined,
     height?: number | undefined,
   ): MutableStyledString {

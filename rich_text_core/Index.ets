@@ -52,7 +52,7 @@ export { assembleText } from './src/main/ets/text/string/text/TextStyledString'
 
 export { TextStyledStringProducer } from './src/main/ets/text/produce/text/TextStyledStringProducer'
 
-export { ImageStyledStringProducer } from './src/main/ets/text/produce/image/ImageStyledStringProducer'
+export { ImageStyledStringProducer } from './src/main/ets/image/produce/ImageStyledStringProducer'
 
 export { TextNodeVisitHandler } from './src/main/ets/text/visit/TextNodeVisitHandler'
 
@@ -61,3 +61,9 @@ export { StyledTextNode } from './src/main/ets/text/node/StyledTextNode'
 export { TextProperty } from './src/main/ets/text/property/TextProperty'
 
 export { ITextProperty } from './src/main/ets/text/property/ITextProperty'
+
+export { IExtensionRichText } from './src/main/ets/extension/IExtensionRichText'
+
+export { ParagraphNode } from 'commonmark'
+
+export { Node as RootNode } from 'commonmark'

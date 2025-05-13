@@ -11,7 +11,7 @@ export function assembleAnchor(
   fontColor: ResourceColor | undefined,
   uniqueId: number | undefined,
   openAnchor?: () => void,
-  onAnchorClick?: () => void,
+  onAnchorClick?: (linkUrl?: string) => void,
 ) {
   const anchorString: MutableStyledString = new MutableStyledString(anchor.content,
     [{
@@ -31,7 +31,7 @@ export function assembleAnchor(
           onClick: () => {
             if (uniqueId) {
               openAnchor?.()
-              onAnchorClick?.()
+              onAnchorClick?.(anchor.href)
             }
           }
         })
