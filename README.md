@@ -31,6 +31,14 @@ Complies with CommonMark standards.
 Project Structure
 -----------------
 
+The project structure is organized into several key directories in the root folder, each serving a specific purpose:
+
+- **commonmark**: Contains Markdown standardized definitions, ensuring compliance with CommonMark standards.
+- **entry**: A demo project utilizing RichTextVista to showcase its capabilities and provide example implementations.
+- **rich_text_core**: Houses the core logic of RichTextVista, including the main functionalities and features.
+
+The complete feature set and code structure are organized and explained in the figure below:
+
 ![Project Structure](https://github.com/larksuite/rich-text-vista/blob/main/project-structure.png)
 
 Usage
@@ -164,7 +172,5 @@ Acknowledgments
 ---------------
 
 *   **HarmonyOS Team**: For collaborating on resolving system API limitations.
-    
-*   **Open Source Community**: Inspired by CommonMark architectures.
     
 *   **Lark App IM Team**: For their guidance and suggestions throughout the development process.

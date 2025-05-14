@@ -19,3 +19,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+commonmark/ is a slightly modified version of
+https://github.com/AnyhowStep/flavormark/tree/master/dist/src/main/commonmark:
+
+[LICENSE](https://github.com/larksuite/rich-text-vista/blob/main/commonmark/LICENSE)
