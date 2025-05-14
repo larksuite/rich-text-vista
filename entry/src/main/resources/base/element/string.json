@@ -2,15 +2,15 @@
   "string": [
     {
       "name": "module_desc",
-      "value": "module description"
+      "value": "RichTextVista is a high-performance, extensible rich text component designed for HarmonyOS applications."
     },
     {
       "name": "EntryAbility_desc",
-      "value": "description"
+      "value": "A collection of example usages of RichTextVista."
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "RTV Demo"
     }
   ]
 }
