@@ -46,14 +46,12 @@ The flexibility of RichTextVista allows you to work with various input formats, 
 
 You can build the rich text directly by constructing the AST (Abstract Syntax Tree) nodes. This approach allows you to have full control over the structure and styling of the text. It is most useful when you do not have a standardized format as your initial input, so it is best to build directly from this standardized AST. You start by creating Node objects and assembling them into a tree, which represents the rich text.
 
-```   
-// Assuming ComponentV2  
-
+```
 @Param content: Node  
 
 build() {
   RichTextVista({      
-    richText: this.createRichTextFromAST()
+    richText: this.createRichTextFromAST(),
     fontSize: 16,      
   })  
 } 
@@ -69,14 +67,14 @@ private createRichTextFromAST() {
 
 For the most basic usage, you can start with a pure string input without any advanced styling. Simply provide the raw string to the component, and it will handle converting it into an AST (Node). This approach is ideal for scenarios where you have plain text content that you want to display as rich text.
 
-```   
+```
 // Assuming ComponentV2 
 
 @Param content: string
 
 build() {
   RichTextVista({      
-    richText: this.createRichTextFromAST()
+    richText: this.createRichTextFromAST(),
     fontSize: 16,      
   })   
 }
@@ -92,14 +90,14 @@ private parsePureTextToAST(content: string): RichTextRepresentation {
 
 If you have an HTML string, you can feed it directly to the component. The component will parse the HTML string and convert it into an AST (Node), which is then used to render the rich text UI. This method is convenient when you have existing HTML content that you want to display as rich text.
 
-```   
+```
 // Assuming ComponentV1  
 
 @Prop content: string
 
 build() {
   RichTextVista({      
-    richText: this.parseHTMLStringToAST(this.content)
+    richText: this.parseHTMLStringToAST(this.content),
     fontSize: 16,      
   })   
 }
@@ -115,14 +113,14 @@ private parseHtmlStringToAST(htmlContent: string): RichTextRepresentation {
 
 For Markdown input, simply provide the Markdown string to the component. The component will handle parsing the Markdown syntax and converting it into an AST (Node). This approach is ideal for scenarios where you have content written in Markdown format and want to display it as rich text.
 
-```   
+```
 // Assuming ComponentV1  
 
 @Prop content: string
 
 build() {
   RichTextVista({      
-    richText: this.parseHTMLStringToAST(this.content)
+    richText: this.parseHTMLStringToAST(this.content),
     fontSize: 16,      
   })   
 }
@@ -167,6 +165,6 @@ Acknowledgments
 
 *   **HarmonyOS Team**: For collaborating on resolving system API limitations.
     
-*   **Open Source Community**: Inspired by CommonMark and Prosemirror architectures.
+*   **Open Source Community**: Inspired by CommonMark architectures.
     
 *   **Lark App IM Team**: For their guidance and suggestions throughout the development process.

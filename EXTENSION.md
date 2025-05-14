@@ -7,7 +7,7 @@ Implementing a custom style involves the following steps. We use an @ mention st
 
 Create an interface extending the core `Extend` class to declare style-specific properties. This serves as the contract for your custom style's data structure.
 
-*For @ mentions: Implement AtNodeExtend with name and hasBackground properties.*
+*For @ mentions: Implement `AtNodeExtend` with necessary properties.*
 
 ```typescript
 import { Extend } from 'rich_text_core'
