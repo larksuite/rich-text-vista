@@ -136,7 +136,7 @@ private parseMarkdownStringToAST(markdownContent: string): RichTextRepresentatio
 
 ### Implement a Custom Style
 
-RichTextVista not only supports pre-built common styles but also allows users to implement custom styles. If you want to display text styles that are not within the pre-built options, implementing a custom style is the best approach. This flexibility is particularly valuable, as supporting custom styles in rich text components can be quite challenging. To implement a custom style, refer to [DEMO]().
+RichTextVista not only supports pre-built common styles but also allows users to implement custom styles. If you want to display text styles that are not within the pre-built options, implementing a custom style is the best approach. This flexibility is particularly valuable, as supporting custom styles in rich text components can be quite challenging. To implement a custom style, refer to [EXTENSION](https://github.com/larksuite/rich-text-vista/blob/main/EXTENSION.md).
 
 Future Plans
 ------------
