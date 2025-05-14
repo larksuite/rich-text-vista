@@ -10,12 +10,12 @@ import {
   IExtensionRichText,
   ParagraphNode,
   RootNode,
+  StyledImageNode,
+  RichTextRepresentation,
+  TextBISUConstants,
+  IOLProperty,
+  OLPropertyType
 } from 'rich_text_core';
-import { RichTextRepresentation } from 'rich_text_core/src/main/ets/component/representation/RichTextRepresentation';
-import { TextBISUConstants } from 'rich_text_core/src/main/ets/text/util/TextBISUConstants';
-import { IOLProperty } from 'rich_text_core/src/main/ets/block/property/ol/IOLProperty';
-import { OLPropertyType } from 'rich_text_core/src/main/ets/block/property/ol/OLPropertyType';
-import { StyledImageNode } from 'rich_text_core/src/main/ets/image/node/StyledImageNode';
 import { AtNode } from '../at_extension/node/AtNode';
 import { AtExtensionRichText } from '../at_extension/AtExtensionRichText';
 
@@ -29,6 +29,17 @@ struct Index {
   @Param strikethroughContent: string = "This is text with strikethrough"
   @Param linkContent: string = "This is a link"
   @Param link: string = "https://developer.huawei.com/consumer/cn/"
+  @Param pureTextString: string = "This is pure text"
+  @Param htmlString: string = "<html>\n" +
+    "<body>\n" +
+    "    <p><b>This is bold text for HTML input</b></p>\n" +
+    "    <p><i>This is italic text for HTML input</i></p>\n" +
+    "    <p><u>This is underlined text for HTML input</u></p>\n" +
+    "    <p><s>This is strikethrough text for HTML input</s></p>\n" +
+    "</body>\n" +
+    "</html>"
+  @Param markdownString: string =
+    "**This is bold text for Markdown input;** *This is italic text for Markdown input;* <u>This is underlined text for Markdown input;</u> ~~This is strikethrough text for Markdown input.~~"
   @Param extensionList: Array<IExtensionRichText<Node>> = []
   scroller: Scroller = new Scroller()
 
@@ -148,18 +159,52 @@ struct Index {
           .margin({
             bottom: 10
           })
+
+        /**
+         * Sample Usage 12: Pure Text
+         */
+        RichTextComponent({
+          richText: this.parsePureTextStringAsAST(),
+          fontSize: 16
+        })
+          .margin({
+            bottom: 10
+          })
+
+        /**
+         * Sample Usage 13: HTML String Input Format
+         */
+        RichTextComponent({
+          richText: this.parseHtmlStringAsAST(),
+          fontSize: 16
+        })
+          .margin({
+            bottom: 10
+          })
+
+        /**
+         * Sample Usage 14: Markdown String Input Format
+         */
+        RichTextComponent({
+          richText: this.parseMarkdownStringAsAST(),
+          fontSize: 16
+        })
+          .margin({
+            bottom: 10
+          })
       }
-      .height('100%')
       .width('100%')
     }
     .scrollable(ScrollDirection.Vertical)
+    .edgeEffect(EdgeEffect.Spring)
   }
 
   private generateNormalText(): RichTextRepresentation {
     const rootNode = new RootNode()
-    const richTextRepresentation = new RichTextRepresentation()
     const styledTextNode = new StyledTextNode(this.normalContent, undefined, undefined)
     rootNode.appendChild(styledTextNode)
+
+    const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
   }
@@ -171,6 +216,7 @@ struct Index {
     const styledTextNode = new StyledTextNode(this.boldContent, undefined, undefined)
     styledTextNode.attributes = styles
     rootNode.appendChild(styledTextNode)
+
     const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
@@ -183,6 +229,7 @@ struct Index {
     const styledTextNode = new StyledTextNode(this.italicContent, undefined, undefined)
     styledTextNode.attributes = styles
     rootNode.appendChild(styledTextNode)
+
     const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
@@ -195,6 +242,7 @@ struct Index {
     const styledTextNode = new StyledTextNode(this.underlineContent, undefined, undefined)
     styledTextNode.attributes = styles
     rootNode.appendChild(styledTextNode)
+
     const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
@@ -207,6 +255,7 @@ struct Index {
     const styledTextNode = new StyledTextNode(this.strikethroughContent, undefined, undefined)
     styledTextNode.attributes = styles
     rootNode.appendChild(styledTextNode)
+
     const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
@@ -217,6 +266,7 @@ struct Index {
     const anchorProperty = new AnchorProperty(this.linkContent ?? "", this.link ?? "")
     const anchorNode = new AnchorNode(anchorProperty)
     rootNode.appendChild(anchorNode)
+
     const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
@@ -236,6 +286,7 @@ struct Index {
 
     const thirdParagraphTextNode = new StyledTextNode("This is the third paragraph", undefined, undefined)
     rootNode.appendChild(thirdParagraphTextNode)
+
     const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
@@ -263,6 +314,7 @@ struct Index {
     const thirdItemTextNode = new StyledTextNode("This is the third list item", undefined, undefined)
     thirdListNode.appendChild(thirdItemTextNode)
     secondListNode.insertAfter(thirdListNode)
+
     const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
@@ -286,6 +338,7 @@ struct Index {
     const thirdItemTextNode = new StyledTextNode("This is the third unordered list item", undefined, undefined)
     thirdListNode.appendChild(thirdItemTextNode)
     secondListNode.insertAfter(thirdListNode)
+
     const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
@@ -293,7 +346,6 @@ struct Index {
 
   private generateTextAndImage() {
     const rootNode = new RootNode()
-    const richTextRepresentation = new RichTextRepresentation()
     const firstTextNode = new StyledTextNode("These are images within text inline ", undefined, undefined)
     rootNode.appendChild(firstTextNode)
     const firstImageNode = new StyledImageNode()
@@ -313,15 +365,17 @@ struct Index {
     secondImageNode.height = 150
     rootNode.appendChild(secondImageNode)
 
+    const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
     return richTextRepresentation
   }
 
   private generateCustomSpan() {
     const rootNode = new RootNode()
-    const richTextRepresentation = new RichTextRepresentation()
+
     const textNode = new StyledTextNode("These are custom spans: ", undefined, undefined)
     rootNode.appendChild(textNode)
+
     const firstAtNode = new AtNode()
     firstAtNode.name = "hello world"
     firstAtNode.hasBackground = true
@@ -335,7 +389,26 @@ struct Index {
     const atExtension = new AtExtensionRichText()
     this.extensionList.push(atExtension)
 
+    const richTextRepresentation = new RichTextRepresentation()
     richTextRepresentation.ast = rootNode
+    return richTextRepresentation
+  }
+
+  private parsePureTextStringAsAST() {
+    const richTextRepresentation = new RichTextRepresentation()
+    richTextRepresentation.plainText = this.pureTextString
+    return richTextRepresentation
+  }
+
+  private parseHtmlStringAsAST() {
+    const richTextRepresentation = new RichTextRepresentation()
+    richTextRepresentation.htmlString = this.htmlString
+    return richTextRepresentation
+  }
+
+  private parseMarkdownStringAsAST() {
+    const richTextRepresentation = new RichTextRepresentation()
+    richTextRepresentation.markdownString = this.markdownString
     return richTextRepresentation
   }
 }

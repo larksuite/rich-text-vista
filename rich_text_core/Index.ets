@@ -48,6 +48,8 @@ export { RichTextComponent } from './src/main/ets/component/RichTextComponent'
 
 export { parseHTMLAsAST } from './src/main/ets/component/representation/html/HTML2AST'
 
+export { parseMarkdownAsAST } from './src/main/ets/component/representation/markdown/Markdown2AST'
+
 export { assembleText } from './src/main/ets/text/string/text/TextStyledString'
 
 export { TextStyledStringProducer } from './src/main/ets/text/produce/text/TextStyledStringProducer'
@@ -63,6 +65,16 @@ export { TextProperty } from './src/main/ets/text/property/TextProperty'
 export { ITextProperty } from './src/main/ets/text/property/ITextProperty'
 
 export { IExtensionRichText } from './src/main/ets/extension/IExtensionRichText'
+
+export { StyledImageNode } from './src/main/ets/image/node/StyledImageNode'
+
+export { RichTextRepresentation } from './src/main/ets/component/representation/RichTextRepresentation'
+
+export { TextBISUConstants } from './src/main/ets/text/util/TextBISUConstants'
+
+export { IOLProperty } from './src/main/ets/block/property/ol/IOLProperty'
+
+export { OLPropertyType } from './src/main/ets/block/property/ol/OLPropertyType'
 
 export { ParagraphNode } from 'commonmark'
 
