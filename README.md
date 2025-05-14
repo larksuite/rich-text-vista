@@ -31,7 +31,7 @@ Complies with CommonMark standards.
 Project Structure
 -----------------
 
-\[Image\]
+![Project Structure](https://github.com/larksuite/rich-text-vista/blob/main/project-structure.png)
 
 Usage
 -----
