@@ -182,12 +182,13 @@ struct Index {
           .margin({ bottom: 10 })
       }
       .alignItems(HorizontalAlign.Start)
-      .margin({ left: 16, right: 16 })
-      .width('auto')
-      .expandSafeArea()
+      .padding({ left: 16, right: 16 })
+      .width('100%')
     }
     .scrollable(ScrollDirection.Vertical)
+    .scrollBar(BarState.Off)
     .edgeEffect(EdgeEffect.Spring)
+    .expandSafeArea()
   }
 
   private createNormalText(content: string): RichTextRepresentation {
