@@ -43,14 +43,13 @@ The complete feature set and code structure are organized and explained in the f
 
 Usage
 -----
-
-RichTextVista offers multiple input formats (raw string, HTML, Markdown, even from scratch) for seamless integration across flexible scenarios. 
+RichTextVista accepts multiple standard formats (raw string, HTML, Markdown) while exposing its Markdown-based Abstract Syntax Tree (AST) specification, enabling users to independently transform custom data structures into this canonical representation – ensuring seamless integration across flexible scenarios through unified processing.
 
 **How RichTextVista Works**
 
 The flexibility of RichTextVista allows you to work with various input formats, making it easy to integrate with different content sources. Whether you start from scratch by building the AST directly, or feed the component with HTML or Markdown strings, the parsing process converts the input into a unified AST (Node) representation. This AST is then used to render the rich text UI, ensuring consistent and accurate display of your content. The ability to implement custom styles further enhances the adaptability of the component, allowing for tailored text presentations that meet specific design requirements.
 
-### Start with AST Input / from Scratch
+### Start with AST Input / Start from Scratch
 
 You can build the rich text directly by constructing the AST (Abstract Syntax Tree) nodes. This approach allows you to have full control over the structure and styling of the text. It is most useful when you do not have a standardized format as your initial input, so it is best to build directly from this standardized AST. You start by creating Node objects and assembling them into a tree, which represents the rich text.
 
@@ -94,7 +93,7 @@ private parsePureTextToAST(content: string): RichTextRepresentation {
 }
 ```
 
-### Start with HTML string input
+### Start with HTML String Input
 
 If you have an HTML string, you can feed it directly to the component. The component will parse the HTML string and convert it into an AST (Node), which is then used to render the rich text UI. This method is convenient when you have existing HTML content that you want to display as rich text.
 
@@ -117,7 +116,7 @@ private parseHtmlStringToAST(htmlContent: string): RichTextRepresentation {
 }
 ```
 
-### Start with Markdown string input
+### Start with Markdown String Input
 
 For Markdown input, simply provide the Markdown string to the component. The component will handle parsing the Markdown syntax and converting it into an AST (Node). This approach is ideal for scenarios where you have content written in Markdown format and want to display it as rich text.
 
@@ -140,7 +139,7 @@ private parseMarkdownStringToAST(markdownContent: string): RichTextRepresentatio
 }
 ```
 
-### Implement a Custom Style
+### Implement Custom Styles
 
 RichTextVista not only supports pre-built common styles but also allows users to implement custom styles. If you want to display text styles that are not within the pre-built options, implementing a custom style is the best approach. This flexibility is particularly valuable, as supporting custom styles in rich text components can be quite challenging. To implement a custom style, refer to [EXTENSION](https://github.com/larksuite/rich-text-vista/blob/main/EXTENSION.md).
 
