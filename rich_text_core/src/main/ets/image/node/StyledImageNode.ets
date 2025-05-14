@@ -4,7 +4,7 @@
 import { ImageNode } from "commonmark"
 import { ImageNodeExtend } from "../extend/ImageNodeExtend"
 
-export class StyledImageNode extends ImageNode implements ImageNodeExtend{
+export class StyledImageNode extends ImageNode implements ImageNodeExtend {
   resStr?: ResourceStr
   width?: number
   height?: number

@@ -20,7 +20,7 @@ export class StyledTextNode extends TextNode {
    */
   public attributes: Map<string, string> = new Map()
 
-  public constructor(content: string, i18nKey: string | undefined, numberOfLines: number | undefined,
+  public constructor(content: string, i18nKey?: string, numberOfLines?: number,
     sourceRange?: string | Range) {
     super(sourceRange)
     this.text = new TextProperty(content, i18nKey, numberOfLines)
