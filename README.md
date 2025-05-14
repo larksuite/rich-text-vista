@@ -160,7 +160,7 @@ Develop an embeddable text editor supporting basic formatting, image insertion, 
 License
 -------
 
-MIT License. See [LICENSE]() for details.
+MIT License. See [LICENSE](https://github.com/larksuite/rich-text-vista/blob/main/LICENSE) for details.
 
 Acknowledgments
 ---------------
