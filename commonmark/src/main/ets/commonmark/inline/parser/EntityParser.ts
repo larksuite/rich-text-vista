@@ -3,8 +3,6 @@ import {InlineContentParser} from "./../../../InlineContentParser";
 import {Node} from "./../../../Node";
 import {ENTITY} from "./../../common";
 
-import {decodeHTML} from "entities";
-
 const reEntityHere = new RegExp('^' + ENTITY, 'i');
 
 export class EntityParser extends InlineParser {
@@ -17,7 +15,7 @@ export class EntityParser extends InlineParser {
         if (m == undefined) {
             return false;
         }
-        node.appendChild(parser.text(decodeHTML(m)));
+        node.appendChild(parser.text(m));
         return true;
     }
 }

@@ -1,10 +1,5 @@
 "use strict";
 
-import * as encode from "mdurl/encode";
-import * as decode from "mdurl/decode";
-
-const decodeHTML = require('entities').decodeHTML;
-
 export const ENTITY = "&(?:#x[a-f0-9]{1,8}|#[0-9]{1,8}|[a-z][a-z0-9]{1,31});";
 
 const TAGNAME = '[A-Za-z][A-Za-z0-9-]*';
@@ -38,11 +33,7 @@ const reXmlSpecial = new RegExp(XMLSPECIAL, 'g');
 const reXmlSpecialOrEntity = new RegExp(ENTITY + '|' + XMLSPECIAL, 'gi');
 
 const unescapeChar = function(s : string) {
-    if (s[0] == "\\") {
-        return s.charAt(1);
-    } else {
-        return decodeHTML(s);
-    }
+    return s.charAt(1);
 };
 
 // Replace entities and backslash escapes with literal characters.
@@ -55,12 +46,7 @@ export const unescapeString = function(s : string) {
 };
 
 export const normalizeURI = function(uri : string) {
-    try {
-        return encode(decode(uri));
-    }
-    catch(err) {
-        return uri;
-    }
+    return uri;
 };
 
 const replaceUnsafeChar = function(s : string) {
