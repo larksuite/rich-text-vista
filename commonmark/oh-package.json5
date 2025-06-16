@@ -1,9 +1,9 @@
 {
   "name": "commonmark",
   "version": "1.0.0",
-  "description": "Please describe the basic information.",
+  "description": "FlavorMark is a Markdown parser, made in TypeScript, with emphasis placed on modularizing element parsing logic, making it easy(-ish) to add/remove syntax for your favorite Markdown flavors.",
   "main": "Index.ets",
-  "author": "",
-  "license": "Apache-2.0",
+  "author": "AsyncAwaitCoffee",
+  "license": "MIT",
   "dependencies": {}
 }

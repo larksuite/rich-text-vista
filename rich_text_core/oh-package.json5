@@ -1,11 +1,14 @@
 {
-  "name": "rich_text_core",
+  "name": "rich_text_vista",
   "version": "1.0.0",
-  "description": "Please describe the basic information.",
+  "description": "RichTextVista is a high-performance, extensible rich text component designed for HarmonyOS applications, supporting diverse rich text styling capabilities. Named for its ability to render content with panoramic clarity, RichTextVista ensures every detail of the text shines in harmony (HarmonyOS).",
   "main": "Index.ets",
-  "author": "",
-  "license": "Apache-2.0",
+  "author": "AsyncAwaitCoffee",
+  "license": "MIT",
+  "keywords": ["markdown", "styling", "ast", "commonmark", "richtext", "richtextview", "text-image", "textrenderer", "textformat"],
+  "homepage": "https://github.com/larksuite/rich-text-vista",
+  "repository": "https://github.com/larksuite/rich-text-vista",
   "dependencies": {
-    "commonmark": "file:../commonmark",
+    "commonmark": "1.0.0",
   }
 }
