@@ -18,5 +18,5 @@
   "nodeOptions": {
     // "maxOldSpaceSize": 8192                  /* Enable nodeOptions maxOldSpaceSize compilation. Unit M. Used for the daemon process. Default: 8192*/
     // "exposeGC": true                         /* Enable to trigger garbage collection explicitly. Default: true*/
-  }
+  },
 }
